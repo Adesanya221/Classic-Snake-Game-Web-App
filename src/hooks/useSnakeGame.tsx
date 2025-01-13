@@ -92,40 +92,39 @@ export const useSnakeGame = () => {
     setSnake(newSnake);
   }, [snake, direction, food, gameOver, isPaused, checkCollision, generateFood, score, toast]);
 
+  const handleDirectionChange = useCallback((newDirection: [number, number]) => {
+    if (
+      (direction[0] === 0 && newDirection[0] === 0) ||
+      (direction[1] === 0 && newDirection[1] === 0)
+    ) {
+      setDirection(newDirection);
+    }
+  }, [direction]);
+
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       if (gameOver) return;
 
       const key = e.key.toLowerCase();
       
-      // Prevent reversing direction
-      if (
-        (key === 'arrowup' || key === 'w') && direction[0] !== 1 ||
-        (key === 'arrowdown' || key === 's') && direction[0] !== -1 ||
-        (key === 'arrowleft' || key === 'a') && direction[1] !== 1 ||
-        (key === 'arrowright' || key === 'd') && direction[1] !== -1
-      ) {
-        switch (key) {
-          case 'arrowup':
-          case 'w':
-            setDirection([-1, 0]);
-            break;
-          case 'arrowdown':
-          case 's':
-            setDirection([1, 0]);
-            break;
-          case 'arrowleft':
-          case 'a':
-            setDirection([0, -1]);
-            break;
-          case 'arrowright':
-          case 'd':
-            setDirection([0, 1]);
-            break;
-          case ' ':
-            setIsPaused((prev) => !prev);
-            break;
-        }
+      if (key === ' ') {
+        setIsPaused(prev => !prev);
+        return;
+      }
+
+      const keyDirections: { [key: string]: [number, number] } = {
+        arrowup: [-1, 0],
+        w: [-1, 0],
+        arrowdown: [1, 0],
+        s: [1, 0],
+        arrowleft: [0, -1],
+        a: [0, -1],
+        arrowright: [0, 1],
+        d: [0, 1],
+      };
+
+      if (keyDirections[key]) {
+        handleDirectionChange(keyDirections[key]);
       }
     };
 
@@ -136,7 +135,7 @@ export const useSnakeGame = () => {
       window.removeEventListener('keydown', handleKeyPress);
       clearInterval(gameInterval);
     };
-  }, [direction, gameOver, moveSnake]);
+  }, [direction, gameOver, moveSnake, handleDirectionChange]);
 
   const restartGame = () => {
     setSnake(INITIAL_SNAKE);
@@ -147,11 +146,18 @@ export const useSnakeGame = () => {
     setIsPaused(false);
   };
 
+  const handleControlClick = (newDirection: [number, number]) => {
+    if (!gameOver) {
+      handleDirectionChange(newDirection);
+    }
+  };
+
   return {
     snake,
     food,
     gameOver,
     score,
     restartGame,
+    handleControlClick,
   };
 };
