@@ -1,69 +1,72 @@
-# Welcome to your Lovable project
+# FISO Game
 
-## Project info
+A classic snake-like game built with TypeScript, React, and Canvas. This project demonstrates core frontend development concepts including game logic, canvas rendering, and real-time user interaction.
 
-**URL**: https://lovable.dev/projects/837b0d55-5aff-487e-94a1-a3b58e1978b1
+## Game Description
 
-## How can I edit this code?
+FISO is a modern take on the classic snake game where players control a character that grows in length as it consumes food. The goal is to achieve the highest possible score without colliding with the walls or the character's own body.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- Responsive canvas-based gameplay
+- Score tracking
+- Increasing difficulty as the game progresses
+- Clean, minimalist design with shadcn/ui
+- Mobile-friendly controls
+- Pause/resume functionality
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/837b0d55-5aff-487e-94a1-a3b58e1978b1) and start prompting.
+## Technologies Used
 
-Changes made via Lovable will be committed automatically to this repo.
+- React for UI components
+- TypeScript for type-safe code
+- HTML5 Canvas for rendering
+- Tailwind CSS for styling
+- shadcn/ui for UI components
 
-**Use your preferred IDE**
+## How to Play
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Use arrow keys to control the direction
+2. Collect food to increase your score and length
+3. Avoid hitting the walls or your own body
+4. Press the pause button to pause the game
+5. Try to achieve the highest score possible
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Development
 
-Follow these steps:
+This project was built using modern frontend technologies to demonstrate:
+- React component architecture
+- Canvas drawing and animation
+- Game state management with React hooks
+- Type-safe programming with TypeScript
+- Responsive design principles with Tailwind CSS
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Adesanya221/Classic-Snake-Game-Web-App.git
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to the local server address shown in the terminal
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Future Enhancements
 
-**Use GitHub Codespaces**
+- Multiple difficulty levels
+- Power-ups and special items
+- Online leaderboard
+- Sound effects and background music
+- Customizable snake appearance
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## License
 
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/837b0d55-5aff-487e-94a1-a3b58e1978b1) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+MIT License
