@@ -1,4 +1,4 @@
-# FISO Game
+# FISO Game - Classic Snake Game Web App
 
 A classic snake-like game built with TypeScript, React, and Canvas. This project demonstrates core frontend development concepts including game logic, canvas rendering, and real-time user interaction.
 
